@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>valid</title>
+	<script type="text/JavaScript">
+		function validation()
+		{
+			var a=document.forms["myform"]["names"].value;
+			var b=document.forms["myform"]["rol"].value;
+			var c=document.forms["myform"]["course"].value;
+			var e=document.forms["myform"]["add"].value;
+			
+			var d=document.forms["myform"]["dob"].value;
+		    var f=document.forms["myform"]["gen"].value;
+			var g=document.forms["myform"]["phn"].value;
+			
+//document.write("name=",a,"<br>");document.write("roll=",b,"<br>");document.write("course=",c,"<br>");document.write("dob=",d,"<br>");
+//document.write("address=",e,"<br>");document.write("gender=",f,"<br>");document.write("phn no=",g,"<br>");
+
+
+			if(a=="")
+			{
+				alert("enter your name");
+				return false;
+			}
+			if(!a.match(/^[a-z A-Z]+$/))
+			{
+				alert("enter valid name");
+				return false;
+			}
+			if(b=="")
+			{
+				alert("enter your roll number");
+				return false;
+			}
+			if(!b.match(/^[mMCcAa0-9]+$/))
+			{
+				alert("enter valid roll number");
+				return false;
+			}
+
+			
+			if(d=="")
+			{
+				alert("enter your dob");
+				return false;
+			}
+			
+			if(f=="")
+			{
+				alert("select gender");
+				return false;
+			}
+			if(g=="")
+			{
+				alert("enter your phone number");
+				return false;
+			}
+			if(isNaN(g)||g.length!=10)
+			{
+				alert("enter valid phone number");
+				return false;
+			}
+		}
+		document.write("name=",a);
+		</script>
+</head>
+<body>
+	<form name="myform" method="post">
+		
+		<table border="2" ALIGN="CENTER">
+		<tr>
+			<th colspan="2">REGISTRATION FORM</th></tr>
+		<tr>
+		<th>Name</th><th><input type="text" name="names"></th></tr>
+		<tr BGCOLOR="GREY"><th>Rolln-No</th><th><input type="text" name="rol"></th></tr>
+		<tr><th>course</th><th><select name="course" size="1">
+			<option value="bsc">bsc
+				<option value="bsc">ba
+					<option value="bsc">bbm
+						<option value="bsc">ma
+							<option value="bsc">msc</th></tr>
+			</select>
+			<tr BGCOLOR="GREY"><th>DOB</th><th><input type="date" name="dob"></th></tr>
+			<tr><th>address</th><th><textarea name="add" >enter address</textarea></th></tr>
+			<tr BGCOLOR="GREY"><th>gender</th><th><input type="radio" name="gen" value="male">Male
+			<input type="radio" name="gen" value="female">Female
+			<input type="radio" name="gen" value="other">Other</th></tr>
+			<br>
+			<tr><th>phone number</th><th><input type="text" name="phn"></th></tr>
+			<tr BGCOLOR="GREY"><th>hobbies</th><th><input type="checkbox" name="hob" value="reading">reading
+			<input type="checkbox" name="hob" value="dancing">dancing
+			<input type="checkbox" name="hob" value="singing">singing
+			<input type="checkbox" name="hob" >other</th></tr>
+			<tr><th colspan="2"><CENTER><input type="button" onclick="validation()" value="submit">&nbsp;
+			<input type="reset" value="reset"></CENTER></th></tr></table>
+		</form>
+
+</body>
+</html>
